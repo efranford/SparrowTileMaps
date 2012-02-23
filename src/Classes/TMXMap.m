@@ -46,52 +46,11 @@ Boolean transitioning;
 }
 
 - (void) westEdgeReached :(TMXEvent*)evt{
-    NSLog(@"West[%f,%f]",evt.playerX, evt.playerY);
-    //mCurrentUpperLeftX = displayWidth+mCurrentUpperLeftX;
-    //[self createMapForPixelsX:evt.playerX y:evt.playerY width:displayWidth height:displayHeight];
-}
-/*
-- (void)createMapForPixelsX:(int)x y:(int)y width:(int)width height:(int)height{
-    NSLog(@"Create map with upper left at x=%i y=%i CUL=[%i,%i]",x,y,mCurrentUpperLeftX,mCurrentUpperLeftY);
-    if(mLayers){
-        [self removeAllChildren];
-        for (id key in mLayers) {
-            TMXLayer* layer = [mLayers objectForKey:key];
-            NSMutableArray* rows = layer.tableData;
-            for(NSMutableArray* row in rows) {
-                for(TMXTile* i in row){
-                    if(i.x*mTileSet.tileHeight < mCurrentUpperLeftX || i.y*mTileSet.tileWidth>displayHeight)
-                    {
-                        break;
-                    }
-                    if(i.tileGid >= mTileSet.firstGid)
-                    {
-                        NSLog(@"[%i,%i]=%i",i.x,i.y,i.tileGid);
-                        SPImage* img = [[[SPImage alloc] initWithTexture:[mTileSet tileByGid:i.tileGid]]autorelease];
-                        img.y =(i.y*mTileSet.tileHeight) - mTileSet.spacing - mCurrentUpperLeftX;
-                        img.x = i.x*mTileSet.tileWidth-mTileSet.spacing - mCurrentUpperLeftY;
-                        [self addChild:img];
-                    }
-                }
-            }
-        }
-    }
-}*/
+    // Here you could put some code to load the next map
+    /// I am still thinking about where the best place to do this is...
+    // NSLog(@"West[%f,%f]",evt.playerX, evt.playerY);
+ }
 
-/*
- south..
- if(i.x*mTileSet.tileHeight < mCurrentUpperLeftX || i.y*mTileSet.tileWidth>displayHeight)
- {
- break;
- }
- if(i.tileGid >= mTileSet.firstGid)
- {
- SPImage* img = [[[SPImage alloc] initWithTexture:[mTileSet tileByGid:i.tileGid]]autorelease];
- img.y =(i.x*mTileSet.tileHeight) - mTileSet.spacing - mCurrentUpperLeftX;
- img.x = i.y*mTileSet.tileWidth-mTileSet.spacing;
- [self addChild:img];
- }
- */
 
 - (void)createMap
 {
@@ -110,22 +69,25 @@ Boolean transitioning;
                     if(i.tileGid >= mTileSet.firstGid)
                     {
                         SPImage* img = [[[SPImage alloc] initWithTexture:[mTileSet tileByGid:i.tileGid]]autorelease];
+                        // the code in the if elses is trying to determine whether the tile is in the first
+                        // row or column.  If it is we don't want to pad it out.  This is a potential area where
+                        // the bug with gridlines could be originatign or resolved
                         if(i.x > 0)
                         {
-                            img.x = i.y*mTileSet.tileHeight-(mTileSet.spacing);//colC);
+                            img.x = i.y*mTileSet.tileHeight-(mTileSet.spacing);
                         }
                         else
                         {
-                            img.x = i.y*mTileSet.tileWidth;//colC);
+                            img.x = i.y*mTileSet.tileWidth;
                         }
                         
                         if(i.y > 0)
                         {
-                            img.y = i.x*mTileSet.tileHeight-(mTileSet.spacing);//rowC);
+                            img.y = i.x*mTileSet.tileHeight-(mTileSet.spacing);
                         }
                         else
                         {
-                            img.y = i.x*mTileSet.tileWidth;//rowC);
+                            img.y = i.x*mTileSet.tileWidth;
                         }
                         img.scaleX = 1.01;
                         img.scaleY = 1.01;
@@ -138,6 +100,8 @@ Boolean transitioning;
         }
     }
     
+    // The below is code you can modify for object groups
+    // Stay tuned for an example on these in the near future.
     /*if(mObjectGroups){
         for(id obj in mObjectGroups)
         {
