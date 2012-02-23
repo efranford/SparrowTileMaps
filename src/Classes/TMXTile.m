@@ -3,7 +3,7 @@
 //  Sparrow
 //
 //  Created by Elliot Franford on 1/20/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Abaondon Hope Games, LLC. All rights reserved.
 //
 
 #import "TMXTile.h"

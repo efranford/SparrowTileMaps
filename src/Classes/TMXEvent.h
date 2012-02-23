@@ -2,8 +2,8 @@
 //  TMXEvent.h
 //  Sparrow
 //
-//  Created by Elliot Franford on 2/4/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Elliot Franford on 1/20/12.
+//  Copyright (c) 2012 Abaondon Hope Games, LLC. All rights reserved.
 //
 
 #import "SPEvent.h"
