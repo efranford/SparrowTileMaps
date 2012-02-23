@@ -46,15 +46,6 @@
 - (bool) hitTest:(id) object
 {
     bool result = NO;
-    if([object isKindOfClass:AHGPlayer.class])
-    {
-        AHGPlayer* player  = ((AHGPlayer*)object);
-       //  if([self.polygon])
-        {
-            
-        }
-
-    }
     return result;
 }
 
