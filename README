@@ -1,0 +1,19 @@
+TMX For Sparrow!
+
+This is my first github project and I am trying to implement tile maps into the sparrow framework.  
+
+Background
+-----------
+Sparrow Framework - iPhone game engine that makes game development much easier
+Tile Maps - I suggest wikipedia for this one, but basically this is using a grid system to define a map
+Tiled - A program that creates and exports tilemaps.  It's really neat and I didn't want to write my own tile map editor program.  Tiled is free and is available on most OSs so it was a great choice.
+
+Known issues
+----------
+The map has a grid on it which is from some sloppy calculation on my part.  I know about this and it's a backburner item for right now.  I am working on creating a simple sample map and code example so it's a little clearer how to use this code.  Stay tuned!
+
+Resources
+----------
+http://www.sparrow-framework.org
+http://www.mapeditor.org
+http://en.wikipedia.org/wiki/Tile_engine
