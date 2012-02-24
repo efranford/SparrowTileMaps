@@ -110,25 +110,8 @@ Boolean transitioning;
                     if(i.tileGid >= mTileSet.firstGid)
                     {
                         SPImage* img = [[[SPImage alloc] initWithTexture:[mTileSet tileByGid:i.tileGid]]autorelease];
-                        if(i.x > 0)
-                        {
-                            img.x = i.y*mTileSet.tileHeight-(mTileSet.spacing);//colC);
-                        }
-                        else
-                        {
-                            img.x = i.y*mTileSet.tileWidth;//colC);
-                        }
-                        
-                        if(i.y > 0)
-                        {
-                            img.y = i.x*mTileSet.tileHeight-(mTileSet.spacing);//rowC);
-                        }
-                        else
-                        {
-                            img.y = i.x*mTileSet.tileWidth;//rowC);
-                        }
-                        img.scaleX = 1.01;
-                        img.scaleY = 1.01;
+                            img.x = i.y*mTileSet.tileWidth;
+                            img.y = i.x*mTileSet.tileWidth;
                         [self addChild:img];
                     }
                     colC++;
