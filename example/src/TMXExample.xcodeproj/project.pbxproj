@@ -12,9 +12,9 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		32BFE02814F7E67500877654 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BFE02714F7E67500877654 /* NSData+Base64.m */; };
 		32BFE02E14F7E6E600877654 /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 32BFE02C14F7E6E600877654 /* map.tmx */; };
 		32BFE02F14F7E6E600877654 /* pset.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BFE02D14F7E6E600877654 /* pset.png */; };
+		32BFE03314F7E9D900877654 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BFE03214F7E9D900877654 /* NSData+Base64.m */; };
 		32E017EB14F5FD78007C4E85 /* TMXData.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E017DB14F5FD78007C4E85 /* TMXData.m */; };
 		32E017EC14F5FD78007C4E85 /* TMXEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E017DD14F5FD78007C4E85 /* TMXEvent.m */; };
 		32E017ED14F5FD78007C4E85 /* TMXLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E017E014F5FD78007C4E85 /* TMXLayer.m */; };
@@ -65,10 +65,10 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32BFE02614F7E67500877654 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		32BFE02714F7E67500877654 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		32BFE02C14F7E6E600877654 /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
 		32BFE02D14F7E6E600877654 /* pset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pset.png; sourceTree = "<group>"; };
+		32BFE03114F7E9D900877654 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../../../src/Classes/NSData+Base64.h"; sourceTree = "<group>"; };
+		32BFE03214F7E9D900877654 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "../../../src/Classes/NSData+Base64.m"; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Application_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application_Prefix.pch; sourceTree = "<group>"; };
 		32E017DA14F5FD78007C4E85 /* TMXData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMXData.h; path = ../../../src/Classes/TMXData.h; sourceTree = "<group>"; };
 		32E017DB14F5FD78007C4E85 /* TMXData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TMXData.m; path = ../../../src/Classes/TMXData.m; sourceTree = "<group>"; };
@@ -199,8 +199,8 @@
 		32BFE03014F7E79100877654 /* Tile Maps */ = {
 			isa = PBXGroup;
 			children = (
-				32BFE02614F7E67500877654 /* NSData+Base64.h */,
-				32BFE02714F7E67500877654 /* NSData+Base64.m */,
+				32BFE03114F7E9D900877654 /* NSData+Base64.h */,
+				32BFE03214F7E9D900877654 /* NSData+Base64.m */,
 				32E017DA14F5FD78007C4E85 /* TMXData.h */,
 				32E017DB14F5FD78007C4E85 /* TMXData.m */,
 				32E017DC14F5FD78007C4E85 /* TMXEvent.h */,
@@ -330,7 +330,7 @@
 				32E017F014F5FD78007C4E85 /* TMXObjectGroup.m in Sources */,
 				32E017F114F5FD78007C4E85 /* TMXTile.m in Sources */,
 				32E017F214F5FD78007C4E85 /* TMXTileSet.m in Sources */,
-				32BFE02814F7E67500877654 /* NSData+Base64.m in Sources */,
+				32BFE03314F7E9D900877654 /* NSData+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
