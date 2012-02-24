@@ -69,33 +69,11 @@ Boolean transitioning;
                     if(i.tileGid >= mTileSet.firstGid)
                     {
                         SPImage* img = [[[SPImage alloc] initWithTexture:[mTileSet tileByGid:i.tileGid]]autorelease];
-<<<<<<< HEAD
-                            img.x = i.y*mTileSet.tileWidth;
-                            img.y = i.x*mTileSet.tileWidth;
-=======
                         // the code in the if elses is trying to determine whether the tile is in the first
                         // row or column.  If it is we don't want to pad it out.  This is a potential area where
                         // the bug with gridlines could be originatign or resolved
-                        if(i.x > 0)
-                        {
-                            img.x = i.y*mTileSet.tileHeight-(mTileSet.spacing);
-                        }
-                        else
-                        {
                             img.x = i.y*mTileSet.tileWidth;
-                        }
-                        
-                        if(i.y > 0)
-                        {
-                            img.y = i.x*mTileSet.tileHeight-(mTileSet.spacing);
-                        }
-                        else
-                        {
                             img.y = i.x*mTileSet.tileWidth;
-                        }
-                        img.scaleX = 1.01;
-                        img.scaleY = 1.01;
->>>>>>> cfcfe1bfcffb70803de693def547c20cfea222de
                         [self addChild:img];
                     }
                     colC++;
