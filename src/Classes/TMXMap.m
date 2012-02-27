@@ -57,11 +57,9 @@ Boolean transitioning;
     [self removeAllChildren];
     if(mLayers){
         for (id key in mLayers) {
-            float rowC =0, colC = 0;
             TMXLayer* layer = [mLayers objectForKey:key];
             NSMutableArray* rows = layer.tableData;
             for(NSMutableArray* row in rows) {
-                colC = 0;
                 for(TMXTile* i in row){
                     if(i.x*mTileSet.tileHeight > displayWidth || i.y*mTileSet.tileWidth>displayHeight){
                         break;
@@ -69,20 +67,15 @@ Boolean transitioning;
                     if(i.tileGid >= mTileSet.firstGid)
                     {
                         SPImage* img = [[[SPImage alloc] initWithTexture:[mTileSet tileByGid:i.tileGid]]autorelease];
-                        // the code in the if elses is trying to determine whether the tile is in the first
-                        // row or column.  If it is we don't want to pad it out.  This is a potential area where
-                        // the bug with gridlines could be originatign or resolved
-                            img.x = i.y*mTileSet.tileWidth;
-                            img.y = i.x*mTileSet.tileWidth;
+                            img.x = i.y*(mTileSet.tileHeight-mTileSet.spacing);
+                            img.y = i.x*(mTileSet.tileWidth-mTileSet.spacing);
                         [self addChild:img];
                     }
-                    colC++;
                 }
-                rowC++;
             }
         }
     }
-    
+
     // The below is code you can modify for object groups
     // Stay tuned for an example on these in the near future.
     /*if(mObjectGroups){

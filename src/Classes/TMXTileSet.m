@@ -29,11 +29,13 @@
 
 -(id)initWithTexture:(SPTexture*)texture
 {
-    [super init];
-    mProperties = [[NSMutableDictionary alloc]init];
-    mTiles = [[NSMutableDictionary alloc]init];
-    mTileSetImage = [texture retain];
-    [self createTileSet];
+    if(self = [super init])
+    {
+        mProperties = [[NSMutableDictionary alloc]init];
+        mTiles = [[NSMutableDictionary alloc]init];
+        mTileSetImage = [texture retain];
+        [self createTileSet];
+    }
     return self;
 }
 
@@ -45,30 +47,22 @@
 -(void) createTileSet{
      if (mTileWidth && mTileHeight)
     {
-        float x = 0;
-        float y = 0;
-        float currentRow = 0;
-        float currentColumn = 0;
-        float columnCount = 0;
+        float x = 0, y = 0;
         int id = mFirstGid;      
         while(x < mTileSetImage.width){
             if((x + mTileWidth+mSpacing) > mTileSetImage.width)
             {
                 x =0+mSpacing;
-                if(currentColumn > columnCount)
-                    columnCount = currentColumn;
-                currentColumn = 0;
-                currentRow++;
-                if((y + mTileHeight+mSpacing) > mTileSetImage.height)
+                 if((y + mTileHeight+mSpacing) > mTileSetImage.height)
                     break;
                 else
                     y += (mTileHeight + mSpacing);
             }
             else
             {    
-                [self addTile: [SPRectangle rectangleWithX:x y:y width:mTileWidth-mSpacing height:mTileHeight-mSpacing] withID:id];
+               
+                [self addTile: [SPRectangle rectangleWithX:x+mSpacing y:y+mSpacing width:mTileWidth-mSpacing height:mTileHeight-mSpacing] withID:id];
                 x += (mTileHeight+ mSpacing);
-                currentColumn++;
                 id++;
             }
         }
